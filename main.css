@@ -1,0 +1,77 @@
+
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+nav {
+
+}
+
+p {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 10px;
+
+
+}
+
+#answersection {
+  background-color: #EEEEEE;
+  text-align: center;
+  padding-top: 50px;
+
+
+}
+
+h3 {
+  margin-top: 0px;
+  font-size: 35px;
+  color: #535353;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  position: relative;
+
+
+}
+
+h3 span {
+  background: #EEEEEE;
+  padding: 0 15px;
+  position: relative;
+  z-index: 1;
+}
+h3::before {
+  background: #ddd;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 99%;
+
+}
+.answer {
+  font-size: 15px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 400;
+  padding-bottom: 40px;
+  color: #535353;
+
+}
+
+footer {
+  background-color: grey;
+  text-align: center;
+  color: lightgrey;
+  font-size: 13px;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 200;
+
+}
+
+footer :after {
+  content:" \00a9  2016 Carmen Chico ";
+}
