@@ -11,7 +11,7 @@ function getPrices (itemsArr) {
 };
 
 //test out the results
-//console.log(getPrices(items));
+console.log(getPrices(items));
 
 //To get the average of the array :
 var total = 0;
@@ -28,7 +28,7 @@ var answer1 =Math.round(avg*100)/100
 //console.log(answer1);
 
 var answer1box = document.getElementById("answer1");
-answer1box.innerHTML = "The average price of the items listed is $" + answer1;
+answer1box.innerHTML = "The average price of the items listed  $" + answer1;
 //  Answer1: The average is $23.63
 
 
@@ -38,10 +38,18 @@ answer1box.innerHTML = "The average price of the items listed is $" + answer1;
 //Question 2 : Show me how to get an array of items that cost between $14.00 and $18.00 USD
 
 
+ items.filter(function(getPrices); {
+   return getPrices[i] >= 14 && <=18;
+
+  });
+// //test out the results
+
+//console.log(cost(itemprices));
 
 
-var answer2box = document.getElementById("answer2");
-answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD " + answer2;
+
+//var answer2box = document.getElementById("answer2");
+//answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD " + answer2;
 //answer2 :  1970s Coors Banquet Glass Beer Pitcher
 //        :  The Three Broomsticks Customizable Beer Stein Mug, Harry Potter Inspired, hogsmeade
 //        :  Hand Painted Colorful Feather Glass
@@ -56,8 +64,8 @@ answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD " + answer
 
 
 
-var answer3box = document.getElementById("answer3");
-answer3box.innerHTML = "These items have a GBP currency code " + answer3;
+//var answer3box = document.getElementById("answer3");
+//answer3box.innerHTML = "These items have a GBP currency code " + answer3;
 
 //Answer3
 //        :  SALE Mid Century Siesta Ware White Mug with Anchor - Set of 3 is made of wood.
@@ -72,8 +80,8 @@ answer3box.innerHTML = "These items have a GBP currency code " + answer3;
 
 
 
-var answer4box = document.getElementById("answer4");
-answer4box.innerHTML = "The following items are made of wood " + answer4;
+//var answer4box = document.getElementById("answer4");
+//answer4box.innerHTML = "The following items are made of wood " + answer4;
 
 //answer4
 //      :  SALE Mid Century Siesta Ware White Mug with Anchor - Set of 3 is made of wood.
@@ -88,8 +96,8 @@ answer4box.innerHTML = "The following items are made of wood " + answer4;
 
 
 
-var answer5box = document.getElementById("answer5");
-answer5box.innerHTML = "The following items are made of 8 or more materials: " + answer5;
+//var answer5box = document.getElementById("answer5");
+//answer5box.innerHTML = "The following items are made of 8 or more materials: " + answer5;
 
 //answer5
 //      :   Qty of 2 Groomsmen Gift - Stainless Steel Personalized Bottle Opener - NO Capcatcher has 9 materials:
@@ -104,8 +112,8 @@ answer5box.innerHTML = "The following items are made of 8 or more materials: " +
 
 
 
-var answer6box = document.getElementById("answer6");
-answer6box.innerHTML = "The following items were made by the seller: " + answer6;
+//var answer6box = document.getElementById("answer6");
+//answer6box.innerHTML = "The following items were made by the seller: " + answer6;
 
 //answer6
 //      :   18 were made by their sellers
