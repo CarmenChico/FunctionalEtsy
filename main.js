@@ -38,18 +38,21 @@ answer1box.innerHTML = "The average price of the items listed  $" + answer1;
 //Question 2 : Show me how to get an array of items that cost between $14.00 and $18.00 USD
 
 
- items.filter(function(getPrices); {
-   return getPrices[i] >= 14 && <=18;
-
+ var findBetweenPrices = items.filter(function(sPrice) {
+   return (sPrice.price > 14.00 && sPrice.price <18.00)
   });
+
+  var betweenPriceList = findBetweenPrices.map(function(bList) {
+    return bList.title;
+  })
+
 // //test out the results
-
-//console.log(cost(itemprices));
-
+//console.log(betweenPriceList);
 
 
-//var answer2box = document.getElementById("answer2");
-//answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD " + answer2;
+
+var answer2box = document.getElementById("answer2");
+answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD : " + betweenPriceList;
 //answer2 :  1970s Coors Banquet Glass Beer Pitcher
 //        :  The Three Broomsticks Customizable Beer Stein Mug, Harry Potter Inspired, hogsmeade
 //        :  Hand Painted Colorful Feather Glass
@@ -57,22 +60,23 @@ answer1box.innerHTML = "The average price of the items listed  $" + answer1;
 
 
 //Question 3: Which item has a"GBP" currency code? Display it's name and price.
+var gbpCurrency = items.filter (function (gbpCode) {
+  return (gbpCode.currency_code === "GBP")
+});
+var gbpName = gbpCurrency.map(function(y) {
+    return y.name;
+});
+var gbpPrice = gbpCurrency.map(function(x)  {
+  return x.price;
+});
 
+console.log (gbpName)
 
-
-
-
-
-
-//var answer3box = document.getElementById("answer3");
-//answer3box.innerHTML = "These items have a GBP currency code " + answer3;
+var answer3box = document.getElementById("answer3");
+answer3box.innerHTML = "The items that has a GBP Currency is _name_ "+ gbpName + "and costs $" + gbpPrice + " GBP";
 
 //Answer3
-//        :  SALE Mid Century Siesta Ware White Mug with Anchor - Set of 3 is made of wood.
-//        :  Bottle cap catcher personalized. Man cave gift for him- Wooden Beer pub sign - Groomsmen wedding Gift is made of wood.
-//        :  Medium Size, Welcome To Our Firepit-Where Friends And Marshmallows Get Toasted At The Same Time-Painted Wood Sign-Custom Colors is made of wood.
-//        :  Magnetic Wall Mount Bottle Opener Barware Set - Stainless Steel or Black - Personalized if you like! is made of wood.
-//        :  Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood. -->
+//        :  1970s-coors-banquet-glass-beer-pitcher cost E18
 
 
 //Question 4: Display a list of all items who are made of wood
