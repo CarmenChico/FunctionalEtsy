@@ -11,7 +11,7 @@ function getPrices (itemsArr) {
 };
 
 //test out the results
-console.log(getPrices(items));
+// console.log(getPrices(items));
 
 //To get the average of the array :
 var total = 0;
@@ -52,7 +52,7 @@ answer1box.innerHTML = "The average price of the items listed  $" + answer1;
 
 
 var answer2box = document.getElementById("answer2");
-answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD : " + betweenPriceList;
+answer2box.innerHTML += "<div>" +"Items that cost between $14.00 and $18.00 USD : "+ "</div>" + "<p>" + betweenPriceList[0] +"</p>" + "<p>" + betweenPriceList[1] +"</p>" + "<p>" + betweenPriceList[2] +"</p>";
 //answer2 :  1970s Coors Banquet Glass Beer Pitcher
 //        :  The Three Broomsticks Customizable Beer Stein Mug, Harry Potter Inspired, hogsmeade
 //        :  Hand Painted Colorful Feather Glass
@@ -60,20 +60,24 @@ answer2box.innerHTML = "Items that cost between $14.00 and $18.00 USD : " + betw
 
 
 //Question 3: Which item has a"GBP" currency code? Display it's name and price.
-var gbpCurrency = items.filter (function (gbpCode) {
-  return (gbpCode.currency_code === "GBP")
+var gbpCurrency = items.filter(function(gbpCode) {
+  // console.log(gbpCode)
+  return gbpCode.currency_code.includes("GBP")
+  console.log(gbpCurrency)
 });
-var gbpName = gbpCurrency.map(function(y) {
-    return y.name;
+
+var gbpTitle = gbpCurrency.map(function(y) {
+  // console.log (gbpTitle)
+    return y.title;
 });
 var gbpPrice = gbpCurrency.map(function(x)  {
   return x.price;
 });
 
-console.log (gbpName)
+
 
 var answer3box = document.getElementById("answer3");
-answer3box.innerHTML = "The items that has a GBP Currency is _name_ "+ gbpName + "and costs $" + gbpPrice + " GBP";
+answer3box.innerHTML = "The items that has a GBP Currency is "+ gbpTitle + "and costs $" + gbpPrice + " GBP";
 
 //Answer3
 //        :  1970s-coors-banquet-glass-beer-pitcher cost E18
@@ -82,10 +86,20 @@ answer3box.innerHTML = "The items that has a GBP Currency is _name_ "+ gbpName +
 //Question 4: Display a list of all items who are made of wood
 
 
+ var madeOfWood = items.filter(function(wood) {
+   return wood.materials.includes("wood")
+  });
+// //must add the .includes "whatever specific word we want, not just the function that we named for the sake of its name.. the "" itentify the specific item.
+  var listOfWood = madeOfWood.map(function(wList) {
+    // console.log(wList);
+    return wList.title;
+  });
 
+// //test out the results
+// console.log(listOfWood);
 
-//var answer4box = document.getElementById("answer4");
-//answer4box.innerHTML = "The following items are made of wood " + answer4;
+var answer4box = document.getElementById("answer4");
+answer4box.innerHTML = "These items have wood included in thier materials" + listOfWood;
 
 //answer4
 //      :  SALE Mid Century Siesta Ware White Mug with Anchor - Set of 3 is made of wood.
@@ -95,13 +109,37 @@ answer3box.innerHTML = "The items that has a GBP Currency is _name_ "+ gbpName +
 //      :  Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood. -->
 
 
+
+
 //Question 5: Which items are made of eight or more materials? Display the name, number of tiems and the items it is made of.
 
+var eightPlusMaterials = items.filter(function(plusMaterials) {
+  return (plusMaterials.materials.length >=8);
+
+ });
+ // console.log(eightPlusMaterials)
+
+ var plusListName = eightPlusMaterials.map(function(pList) {
+  //  console.log(pList);
+
+   return pList.title
+
+ });
+ console.log(plusListName)
+
+ var plusListItem = eightPlusMaterials.map(function(pList) {
+
+   return pList.materials
+
+ });
+
+// //test out the results
+console.log(plusListItem)
 
 
+var answer5box = document.getElementById("answer5");
+answer5box.innerHTML += "The following items are made of 8 or more materials: " + "<p>" + plusListName[0] + "</p>" + plusListItem[0] + "(material used)" + "<p>" + plusListName[1] + "</p>" + plusListItem[1] + "(material used)"
 
-//var answer5box = document.getElementById("answer5");
-//answer5box.innerHTML = "The following items are made of 8 or more materials: " + answer5;
 
 //answer5
 //      :   Qty of 2 Groomsmen Gift - Stainless Steel Personalized Bottle Opener - NO Capcatcher has 9 materials:
@@ -115,9 +153,28 @@ answer3box.innerHTML = "The items that has a GBP Currency is _name_ "+ gbpName +
 //Question 6: How many items were made by thier sellers?
 
 
+var sellerMade = items.filter(function(sMade) {
+  return sMade.who_made.includes ("i_did")
 
-//var answer6box = document.getElementById("answer6");
-//answer6box.innerHTML = "The following items were made by the seller: " + answer6;
+
+ });
+
+ //
+ // console.log(sellerMade.length)
+
+
+ // var sMadeList = items.map(function(sList) {
+ //  //  console.log(pList);
+ //
+ //   return sList.length
+ //
+ // });
+ // console.log(sMadeList)
+
+var answer6box = document.getElementById("answer6");
+answer6box.innerHTML =  sellerMade.length + " items were made by the seller."
+
+
 
 //answer6
 //      :   18 were made by their sellers

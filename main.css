@@ -8,11 +8,14 @@ nav {
 
 }
 
-p {
+.header {
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
-  padding-left: 10px;
+  padding-left: 0;
+}
 
+.header p {
+  padding-left: 30px;
 
 }
 
@@ -74,4 +77,8 @@ footer {
 
 footer :after {
   content:" \00a9  2016 Carmen Chico ";
+}
+
+#answer2 div {
+  font-weight: 500;
 }
